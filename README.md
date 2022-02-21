@@ -4,10 +4,16 @@ A ViT based transformer applied on multi-channel time-series EEG data for motor 
 The repository contains code that is highly experimental. Many arguments are hardcoded and the data is not carefully pre-processed. Use with caution. **If you are developing a research project inspired by this repo, please send me an email:** ziruiw2000@gmail.com and cc it to ziw029@ucsd.edu
 
 ## Introduction
+This is a naive baseline model that explores the possibility of using a ViT based transformer for inferring 3-class motor imagery based on multichannel time-series EEG data recorded at 1000 Hz for 8 seconds (in which 4 seconds are used). The model shows the capability to converge on training data with very high accuracy (i.e. around 98%), but suffers from overfitting. Our contributions are:
+ * Demonstrating that it's possible to use a ViT to deal with multi-channel EEG data based on computational resources (it took 1 minute for each epoch on 1,000 training data on a 1080Ti. About 6000 Mb of VRAM is used during training).
+ * The model is capable of learning information on this architecture. By using a learnable CLS token and concatenating with the other 59 tokens before encoding (i.e. 59 channels of EEG data), the latent of CLS, with an MLP head, is able to make predictions on the training set with almost 100% accuracy and above 55% accuracy on validation set.
+ * We found that the biggest problem for this model is its tendency to overfit. This can be solved by many approaches such as using more training data, using techniques in latest research regarding fine-tuning the transformer in low data settings. This model can also further be improved by pre-training, which we can mask some channels or time-intervals to let the model reconstruct, which is pretty similar to [MAE](https://arxiv.org/abs/2111.06377). This mechanism has not been implemented in this baseline model.
 
 ## Model High-Level Architecture
+<img src="architecture.png" alt="drawing" width="800"/>
 
 ## Model Low-Level Architecture
+```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
@@ -40,3 +46,4 @@ Forward/backward pass size (MB): 47.83
 Params size (MB): 740.39
 Estimated Total Size (MB): 789.13
 ----------------------------------------------------------------
+```
