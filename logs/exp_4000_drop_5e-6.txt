@@ -1,0 +1,157 @@
+cuda:0
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+         LayerNorm-1             [-1, 60, 4000]           8,000
+            Linear-2            [-1, 60, 12000]      48,000,000
+           Dropout-3            [-1, 8, 60, 60]               0
+            Linear-4             [-1, 60, 4000]      16,004,000
+           Dropout-5             [-1, 60, 4000]               0
+         Attention-6             [-1, 60, 4000]               0
+          Identity-7             [-1, 60, 4000]               0
+         LayerNorm-8             [-1, 60, 4000]           8,000
+            Linear-9            [-1, 60, 16000]      64,016,000
+             GELU-10            [-1, 60, 16000]               0
+          Dropout-11            [-1, 60, 16000]               0
+           Linear-12             [-1, 60, 4000]      64,004,000
+          Dropout-13             [-1, 60, 4000]               0
+              Mlp-14             [-1, 60, 4000]               0
+         Identity-15             [-1, 60, 4000]               0
+            Block-16             [-1, 60, 4000]               0
+           Linear-17                  [-1, 512]       2,048,512
+             ReLU-18                  [-1, 512]               0
+           Linear-19                    [-1, 3]           1,539
+================================================================
+Total params: 194,090,051
+Trainable params: 194,090,051
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.90
+Forward/backward pass size (MB): 47.83
+Params size (MB): 740.39
+Estimated Total Size (MB): 789.13
+----------------------------------------------------------------
+None
+data/BCICIV_calib_ds1e_1000Hz.mat
+data/BCICIV_calib_ds1b_1000Hz.mat
+data/BCICIV_calib_ds1g_1000Hz.mat
+data/BCICIV_calib_ds1a_1000Hz.mat
+data/BCICIV_calib_ds1f_1000Hz.mat
+data/BCICIV_calib_ds1c_1000Hz.mat
+data/BCICIV_calib_ds1d_1000Hz.mat
+Epoch 1/50
+----------
+train Loss: 0.9835 Acc: 0.4820
+val Loss: 0.8647 Acc: 0.4822
+test Loss: 0.9316 Acc: 0.4800
+
+Epoch 2/50
+----------
+train Loss: 0.8945 Acc: 0.5260
+val Loss: 0.8808 Acc: 0.4924
+test Loss: 0.9341 Acc: 0.4550
+
+Epoch 3/50
+----------
+train Loss: 0.8206 Acc: 0.5870
+val Loss: 0.9162 Acc: 0.5279
+test Loss: 0.9872 Acc: 0.4950
+
+Epoch 4/50
+----------
+train Loss: 0.7145 Acc: 0.6610
+val Loss: 0.9413 Acc: 0.4975
+test Loss: 1.0187 Acc: 0.4750
+
+Epoch 5/50
+----------
+train Loss: 0.5951 Acc: 0.7370
+val Loss: 1.0750 Acc: 0.5178
+test Loss: 1.1746 Acc: 0.4550
+
+Epoch 6/50
+----------
+train Loss: 0.4722 Acc: 0.7980
+val Loss: 1.1398 Acc: 0.4924
+test Loss: 1.2637 Acc: 0.4600
+
+Epoch 7/50
+----------
+train Loss: 0.3630 Acc: 0.8550
+val Loss: 1.4044 Acc: 0.4772
+test Loss: 1.4628 Acc: 0.4550
+
+Epoch 8/50
+----------
+train Loss: 0.3004 Acc: 0.8910
+val Loss: 1.5723 Acc: 0.4822
+test Loss: 1.6909 Acc: 0.4150
+
+Epoch 9/50
+----------
+train Loss: 0.2460 Acc: 0.9120
+val Loss: 1.7107 Acc: 0.4721
+test Loss: 1.8489 Acc: 0.4400
+
+Epoch 10/50
+----------
+train Loss: 0.2051 Acc: 0.9190
+val Loss: 1.7861 Acc: 0.4772
+test Loss: 1.9899 Acc: 0.4350
+
+Epoch 11/50
+----------
+train Loss: 0.1665 Acc: 0.9380
+val Loss: 1.7741 Acc: 0.4822
+test Loss: 2.0483 Acc: 0.4450
+
+Epoch 12/50
+----------
+train Loss: 0.1723 Acc: 0.9400
+val Loss: 1.9901 Acc: 0.4315
+test Loss: 2.1417 Acc: 0.4900
+
+Epoch 13/50
+----------
+train Loss: 0.1719 Acc: 0.9300
+val Loss: 2.2405 Acc: 0.4518
+test Loss: 2.4855 Acc: 0.4550
+
+Epoch 14/50
+----------
+train Loss: 0.1364 Acc: 0.9480
+val Loss: 2.3124 Acc: 0.4975
+test Loss: 2.3567 Acc: 0.4550
+
+Epoch 15/50
+----------
+train Loss: 0.1326 Acc: 0.9490
+val Loss: 2.0878 Acc: 0.5228
+test Loss: 2.4201 Acc: 0.4300
+
+Epoch 16/50
+----------
+train Loss: 0.1438 Acc: 0.9490
+val Loss: 2.3455 Acc: 0.5279
+test Loss: 2.7396 Acc: 0.4350
+
+Epoch 17/50
+----------
+train Loss: 0.1082 Acc: 0.9540
+val Loss: 2.5793 Acc: 0.4569
+test Loss: 2.8569 Acc: 0.4700
+
+Epoch 18/50
+----------
+train Loss: 0.1498 Acc: 0.9450
+val Loss: 2.1692 Acc: 0.5279
+test Loss: 2.6216 Acc: 0.4450
+
+Epoch 19/50
+----------
+train Loss: 0.1396 Acc: 0.9470
+val Loss: 2.6353 Acc: 0.4518
+test Loss: 2.4803 Acc: 0.4350
+
+Epoch 20/50
+----------
