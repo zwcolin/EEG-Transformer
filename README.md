@@ -3,6 +3,8 @@ A ViT based transformer applied on multi-channel time-series EEG data for motor 
 
 The repository contains code that is highly experimental. Many arguments are hardcoded and the data is not carefully pre-processed. Use with caution. **If you are developing a research project inspired by this repo, please send me an email:** ziruiw2000@gmail.com and cc it to ziw029@ucsd.edu
 
+#### Colin's notes as of 10/10/2022: I'm quite surprised that this repo (which originally was a course project) is getting 20+ stars. To make sure it works well and benefit those who need it, I will soon check if everything is working well and update the code if needed. Thank you all for your supports! We really appreciate your feedbacks and opinions on this.
+
 ## Introduction
 This is a naive baseline model that explores the possibility of using a ViT based transformer for inferring 3-class motor imagery based on multichannel time-series EEG data recorded at 1000 Hz for 8 seconds (in which 4 seconds are used). The model shows the capability to converge on training data with very high accuracy (i.e. around 98%), but suffers from overfitting. Our contributions are:
  * Demonstrating that it's possible to use a ViT to deal with multi-channel EEG data based on computational resources (it took 1 minute for each epoch on 1,000 training data on a 1080Ti. About 6000 Mb of VRAM is used during training).
